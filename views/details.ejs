@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>  
+    </head>  
+<body>
+   
+    <h3><% if(message!='') {%>
+        <%= message%>
+        <%}%></h3>
+    
+<h2><%= title %></h2>
+
+
+<table border="5">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th> FirstRound</th>
+            <th>SecondRound</th>
+            <th>ThirdRound</th> 
+            <th>TotalScore</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <% Testscore.forEach(function(test){%>
+            <tr>
+                <td><%= test.email %></td>
+                <td><%= test.firstround %></td>
+                <td><%= test.secondround %></td>
+                <td><%= test.thirdround %></td>
+                <td> <%=  test.thirdround + test.secondround + test.firstround %> </td>
+            </tr>
+            <% });%>    
+
+    </tbody>
+</table>
+
+
+
+</body>
+
+</html>
